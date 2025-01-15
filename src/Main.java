@@ -158,11 +158,20 @@ public class Main {
 //
 //    }
 
+    /**
+     * Filter patients by the first character of their name
+     * @param c
+     * @param gruppen
+     */
     public static void filterPatientsByChar(Character c, List<DrHouse> gruppen) {
         gruppen.stream().filter(gruppe -> gruppe.getPatient().charAt(0) == c)
                 .map(DrHouse::getPatient).forEach(System.out::println);
     }
 
+    /**
+     * Sort patients with symptom 'Fieber' by date
+     * @param gruppen
+     */
     public static void sortSymptomFiberByDate(List<DrHouse> gruppen){
         gruppen.stream()
                 .filter(gruppe -> gruppe.getSymptom().equals("Fieber"))
